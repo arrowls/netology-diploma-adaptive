@@ -701,7 +701,7 @@ ul.icons {
     }
     .header {
         height: 100vh;
-        background-image: url('img/header-mobile.png');
+        background-image: url('../img/header-mobile.png');
         background-size: cover;
     }   
     .header-intro {
