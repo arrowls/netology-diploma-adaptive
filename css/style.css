@@ -48,6 +48,18 @@ a {
 .title-dashed {
     position: relative;
 }
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
   
 
 
@@ -169,19 +181,19 @@ h2.trends__title, h2.our-products-title {
 
 
 .trends__item:first-child {
-    background: url('img/trends1.png')  no-repeat;
+    background: url('../img/trends1.png')  no-repeat;
     background-size: cover;
 }
 .trends__item:nth-child(2) {
-    background: url('img/trends2.png')  no-repeat;
+    background: url('../img/trends2.png')  no-repeat;
     background-size: cover;
 }
 .trends__item:nth-child(3) {
-    background: url('img/trends3.png')  no-repeat;
+    background: url('../img/trends3.png')  no-repeat;
     background-size: cover;
 }
 .trends__item:nth-child(4) {
-    background: url('img/trends4.png')  no-repeat;
+    background: url('../img/trends4.png')  no-repeat;
     background-size: cover;
 }
 
@@ -237,6 +249,7 @@ main {
 }
 .card {
     display: flex;
+    align-items: flex-start;
 }
 .card:nth-child(n+2){
     margin-top: 60px;
@@ -434,15 +447,18 @@ main {
     border-bottom: 1px solid #eeeeee;
     font-size: 14px;
     font-weight: bold;
+    position: relative;
 }
 .topic:hover {
     color:#b59f5b ;
     transition: 0.2s;
 }
-sup {
+.topic span {
     color:#b59f5b ;
     font-weight: bold;
     margin-left: 3px;
+    position: absolute;
+    bottom: 6px;
 }
 
 /*     O U R    P R O D U C T S   */
@@ -476,13 +492,13 @@ sup {
     z-index: -2;
 }
 .our-products__product:nth-child(1) .our-products__img {
-    background-image: url('img/our-products1.png');
+    background-image: url('../img/our-products1.png');
 }
 .our-products__product:nth-child(2) .our-products__img {
-    background-image: url('img/our-products2.png');
+    background-image: url('../img/our-products2.png');
 }
 .our-products__product:nth-child(3) .our-products__img {
-    background-image: url('img/our-products3.png');
+    background-image: url('../img/our-products3.png');
 }
 .our-products__content {
     padding: 5%;
