@@ -733,6 +733,7 @@ ul.icons {
     .our-products {
         width: 90%;
         margin: 0 auto;
+        padding: 0;
     }
     .our-products__product {
         width: 100%;
@@ -755,6 +756,7 @@ ul.icons {
     }
     .right-block {
         width: 100%;
+        margin-left: 0;
     }
     footer {
         padding: 0;
