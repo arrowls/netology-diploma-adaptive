@@ -73,7 +73,8 @@ a {
     margin: auto;
     display: flex;
     flex-direction: column; 
-    
+    width: 95%;
+    max-width: 390px;
 }
 #popup__cross {
     height: 20px;
@@ -87,8 +88,7 @@ a {
     box-sizing: border-box;
     align-self: center;
     padding: 50px 30px; 
-    width: 95%;
-    max-width: 390px;
+    width: 100%;
     
     
     z-index: 100;
