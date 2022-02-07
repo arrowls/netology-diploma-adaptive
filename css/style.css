@@ -1,895 +1,390 @@
-@font-face {
-    font-family: Open-Sans;
-    src: url(https://netology-code.github.io/html-2-diploma/sources/fonts/OpenSans-Regular.woff);
-    font-weight: 400;
-    font-style: normal;
-}
-@font-face {
-    font-family: Open-Sans;
-    src: url(https://netology-code.github.io/html-2-diploma/sources/fonts/OpenSans-Bold.woff);
-    font-weight: 700;
-    font-style: normal;
-}
-
-:root {
-    --border-opacity: rgba(181, 159, 91, 0.5)
-}
-*{
-    margin: 0;
-    font-family: open-sans;
+<!DOCTYPE HTML>
+<html lang="ru">
+  <head>
+    <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8"/> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  <title>Дипломная работа</title>
+    </head>
+<body>
     
-}
-
-.content {
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    max-width: 1170px;
-}
-a {
-    text-decoration: none;
-    color: black;
-}
-
-.hovered-orange:hover {
-    color: #b59f5b;
-    transition: 0.2s;
-}
-.title-dashed::after {
-    content: "";
-    display: block;
-    
-    margin: 0 auto;
-    width: 64px;
-    height: 3px;
-    background-color: #e1d9bd;
-    margin-top: 10px;
-}
-.title-dashed {
-    position: relative;
-}
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
-    white-space: nowrap;
-    clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden;
-}
-
-.popup {
-    display: none;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: 90;
-}
-.popup__wrapper {
-    position: relative;
-    margin: auto;
-    display: flex;
-    flex-direction: column; 
-    
-}
-#popup__cross {
-    height: 20px;
-    align-self: flex-end;
-    margin-bottom: 5px;
-}
-#popup__cross:hover > path {
-    fill: #b59f5b;
-}
-.popup__content {
-    box-sizing: border-box;
-    align-self: center;
-    padding: 50px 30px; 
-    width: 95%;
-    max-width: 390px;
-    
-    
-    z-index: 100;
-    background-color: #fff;
-}
-h2.popup__title {
-    font-size: 20px;
-    margin-bottom: 30px;
-}
-.popup p {
-    font-size: 13px;
-}
-#how-often {
-    width: 100%;
-    padding: 18px;
-    border: none;
-    border: 2px solid transparent;
-    background-color: #f4f7f6;
-    background-image: url(../svg/form-arrows.svg);
-    background-position: 95% 50%;
-    background-repeat: no-repeat;
-    background-size: auto 15px;
-    color: #818382;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    margin-top: 5px;
-    margin-bottom: 30px;
-}
-.is-subscribed__form {
-    font-size: 13px;
-    margin-bottom: 30px;
-    margin-top: 5px;
-}
-.form-row input {
-    position: absolute;
-    height: 1px;
-    width: 1px;
-    clip: rect(1px, 1px, 1px, 1px);
-}
-.form-row {
-    margin-right: 12px;
-    
-}
-.radio-group-text::before {
-    content: "";
-    display: inline-block;
-    width: 18px;
-    height: 18px;
-    background-image: url(../svg/form-empty-circle.svg);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 18px;
-    vertical-align: middle;
-    margin-right: 3px;
-}
-.form-row input:checked ~ .radio-group-text::before {
-    background-image: url(../svg/form-circle.svg);
-}
-.popup__feedback {
-    box-sizing: border-box;
-    width: 100%;
-    padding: 20px;
-    border: 1px solid transparent;
-    background-color: #f4f7f6;
-    color: #323232;
-    resize: none;
-    margin-top: 5px;
-}
-.popup__feedback:focus {
-    outline: 1px solid #b59f5b;
-}
-.popup__button {
-   margin-top: 25px;
-}
-.popup::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: black;
-    opacity: 0.6;
-    z-index: -1;
-    height: 100%;
-}
-.popup-visible {
-    display: flex;
-}
-
-
-/*  ------- H-E-A-D-E-R--------*/   
-
-.header {
-    width: 100%;
-    box-sizing: border-box;
-    padding-bottom: 10%; 
-    background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/banner-bg.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    position: relative;
-    z-index: 1;
-}
-.header::after {
-    content: "";
-    background-color: black;
-    opacity: 0.5;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: -1;
-}
-.header__inner {
-    padding: 23px 15px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: calc(100vw - 40px * 2);
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 5%;
-}
-.header-intro {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    margin: auto;
-
-}
-.header-text {
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 45px;
-    line-height: 75px;
-    color: white;
-    width: 680px;
-    max-width: 90%;
-    text-align: center;     
-}
-.burger-menu {
-    display: none;
-    flex-direction: column;
-    height: 21px;
-    width: 21px;
-    justify-content: space-around;
-}
-.burger-menu__item {
-    background-color: white;
-    height: 3px;
-    border-radius: 1px;
-}
-
-/* ---------N-A-V-I-G-A-T-I-O-N--------*/
-
-.logo, .logo a {
-    width: 100%;
-    height: 40px;
-}
-.logo img {
-    height: 100%;
-    width: auto; 
-}
-.logo-mobile {
-    display: none;
-    width: 70%;
-}
-
-.nav-menus {
-    list-style-type: none;
-    display: flex; 
-}
-
-.menu-item {
-    font-size: 13px;
-    color: white;
-    text-transform: uppercase;
-    border: 2px solid transparent; 
-}
-.menu-item:nth-child(n+2) {
-    margin-left: 35px;
-}
-.menu-item:hover {
-    border-bottom: 2px solid white;
-    transition: 0.4s;
-}
-
-/* ---------- T R E N D S------*/
-
-.trends {
-    margin-top: 60px; 
-}
-.trends__wrapper {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-top: 25px;   
-}
-h2.trends__title, h2.our-products-title {
-    font-size: 20px;
-}
-
-
-.trends__item:first-child {
-    background: url('../img/trends1.png')  no-repeat;
-    background-size: cover;
-}
-.trends__item:nth-child(2) {
-    background: url('../img/trends2.png')  no-repeat;
-    background-size: cover;
-}
-.trends__item:nth-child(3) {
-    background: url('../img/trends3.png')  no-repeat;
-    background-size: cover;
-}
-.trends__item:nth-child(4) {
-    background: url('../img/trends4.png')  no-repeat;
-    background-size: cover;
-}
-
-.trends__item {
-    width: calc(25% - 1px);
-    height: 20vw;
-    margin-bottom: 1px;
-    padding: 15px 20px;
-    box-sizing: border-box;
-    display: flex;
-    align-items: flex-end;
-}
-.trends__content {
-    padding: 30px; /*или 2vw*/
-    border: 3px solid var(--border-opacity); 
-}
-.trends__tag {
-    text-transform: uppercase;
-    font-size: 14px;
-    color: #b59f5b;
-    margin-right: 15px;
-    font-weight: bold;
-    border-bottom: 1px solid transparent;
-}
-.trends__tag:hover {
-    border-color: #b59f5b;
-    transition: 0.2s;
-}
-
-.trends__text {
-    text-transform: uppercase;
-    font-size: 17px;
-    font-weight: 500;
-    color: white;
-}
-.trends__text:hover {
-    color: #b59f5b;
-    transition: 0.2s;
-}
-
-/*   M A I N    P A G E    */
-
-.content {
-    max-width: 1200px;
-    padding: 60px 30px;
-    display: flex;
-    box-sizing: border-box;
-}
-main {
-    max-width: 800px;
-    box-sizing: border-box;
-    flex-shrink: 1;
-}
-.card {
-    display: flex;
-    align-items: flex-start;
-}
-.card:nth-child(n+2){
-    margin-top: 60px;
-}
-.card-img {
-    width: 380px;
-    margin-right: 30px;
-}
-.categories {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-.categories li:nth-child(n+2){ 
-    margin-left: 18px;
-}
-.categories li {
-    display: inline-block;
-}
-.category {
-    text-transform: uppercase;
-    text-decoration: none;
-    color: #b59f5b;
-    font-size: 14px;
-    font-weight: bold;
-    border-bottom: 2px solid transparent;
-}
-.category:hover {
-    border-bottom: 2px solid #b59f5b;  
-    transition: 0.2s;
-}
-.card-name {
-    text-transform: uppercase;
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 35px;
-    margin-top: 10px;
-}
-.date {
-    font-size: 12px;
-    color: #888888;
-    margin-right: 15px;
-}
-.author {
-    font-size: 12px;
-    font-weight: bold;
-}
-.card-content {
-    margin-top: 20px;
-    font-size: 15px;
-}
-.card-content:first-child{
-    margin-top: 50px;
-}
-
-/* ---------R-I-G-H-T----P-A-N-N-E-L---------*/
-
-.right-block {
-    width: 270px;
-    flex-shrink: 0;
-    margin-left: 30px;
-}
-.post {
-    display: flex;
-    height: 70px;
-    line-height: 18px;
-}
-.new-posts {
-    margin-bottom: 60px;
-}
-.post:nth-child(n+2) {
-    margin-top: 20px;
-}
-.post-title {
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: bold;
-}
-.new-posts-title, .emailing-title, .tags-title, .topics-title, 
-.trends__title, .our-products-title, .popup__title {
-    text-transform: uppercase;
-    font-size: 14px;
-    text-align: center;
-    position: relative;
-}   
-.post img {
-    margin-right: 20px;
-}
-.input-field {
-    height: 48px; 
-    position: relative; 
-}
-.search-form {
-    display: flex;
-}
-.input {
-    width: calc(100% - 48px);
-    background-color: #f4f7f6;
-    border: none;
-    padding: 15px;
-    color: #888888;
-}
-.search-button {
-    background-color: #b59f5b;
-    background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/search.svg);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 20px;
-    height: 48px;
-    width: 48px;
-    border: none;
-}
-
-/*--------E-M-A-I-L------*/
-
-.email-form {
-    position: relative;
-    height: 115px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-top: 40px;
-}
-.emailing {
-    margin-top: 60px;
-}
-.email {
-    width: 100%;
-    border: none;
-    padding: 15px;
-    box-sizing: border-box;
-    color: #888888;
-    background-color: #f4f7f6; 
-}
-.email:focus, .input:focus, #how-often:focus {
-    border: 2px solid #b59f5b;
-    outline: none;
-}
-.email-button, .our-products__button, .popup__button {
-    background-color: #b59f5b;
-    width: 100%;
-    color: white;
-    text-transform: uppercase;
-    font-weight: bold;
-    vertical-align: baseline;
-    padding: 0;
-    height: 48px;
-    border: none;
-    flex-shrink: 0;
-}
-.email-button:hover, .search-button:hover, .our-products__button:hover, .popup__button:hover {
-    background-color: #323232;
-    color: white;
-    transition: 0.2s;
-}
-.tags {
-    margin-top: 40px;
-}
-.tag-items {
-    margin-top: 35px;
-    list-style-type: none;
-    padding: 0;
-}
-.tag-items li {
-    display: inline-block;   
-}
-.tag-item {
-    text-transform: uppercase;
-    border: 3px solid #eeeeee;
-    display: inline-block;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 5px 11px;
-    margin: 3px;
-    box-sizing: border-box;
-}
-.tag-item:hover {
-    color: white;
-    background-color:#b59f5b ;
-    transition: 0.2s;
-    border-color: #b59f5b;
-}
-.topics {
-    margin-top: 60px;
-}
-.topics-block {
-    margin-top: 20px;
-    list-style-type: none;
-    padding: 0;
-}
-.topic {
-    display: block;
-    height: 48px;
-    line-height: 48px;
-    border-bottom: 1px solid #eeeeee;
-    font-size: 14px;
-    font-weight: bold;
-    position: relative;
-}
-.topic:hover {
-    color:#b59f5b ;
-    transition: 0.2s;
-}
-.topic span {
-    color:#b59f5b ;
-    font-weight: bold;
-    margin-left: 3px;
-    position: absolute;
-    bottom: 6px;
-}
-
-/*     O U R    P R O D U C T S   */
-
-.our-products {
-    font-size: 17px;
-    margin-bottom: 65px;
-    padding-left: 30px;
-    padding-right: 30px;
-    box-sizing: border-box;
-}
-.our-products__wrapper {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin: 30px auto 0;
-    max-width: 1170px;
-}
-.our-products__product {
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: stretch;
-    margin-bottom: 30px;
-}
-.our-products__img {
-    flex-basis: 225px;
-    width: 90%;
-    margin: 0 auto;
-    background-size: cover;
-    z-index: -2;
-}
-.our-products__product:nth-child(1) .our-products__img {
-    background-image: url('../img/our-products1.png');
-}
-.our-products__product:nth-child(2) .our-products__img {
-    background-image: url('../img/our-products2.png');
-}
-.our-products__product:nth-child(3) .our-products__img {
-    background-image: url('../img/our-products3.png');
-}
-.our-products__content {
-    padding: 5%;
-    flex-grow: 1;
-    position: relative;
-}
-.our-products__content::after {
-    content: '';
-    position: absolute;
-    outline: 3px solid var(--border-opacity);
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: -30px; 
-    z-index: -1;  
-}
-.our-products__title {
-    text-transform: uppercase;
-    font-size: 17px;
-    margin-bottom: 10px;
-}
-.our-products__buy {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-.our-products__price, .our-products__price-dashed {
-    font-weight: bold;
-    font-size: 20px;
-    display: block;
-    align-self: flex-end;
-}
-.our-products__price-dashed {
-    font-size: 14px;
-    text-decoration: line-through;
-}
-.our-products__button {
-    width: 140px;
-    flex-grow: 0;
-    font-size: 14px;
-    font-weight: 500;
-}
-
-/*-------F-O-O-T-E-R------*/
-
-footer {
-    padding-right: 27px;
-    padding-left: 27px;
-}
-ul.icons {
-    display: flex;
-    justify-content: space-between;
-    width: 220px;
-    margin: 0 auto;
-    
-    list-style-type: none;
-    padding: 0;
-}
-
-
-.icon, .socials-icon  {
-    height: 24px;
-    width: 24px;
-    display: inline-block;
-}
-
-.icon:hover {
-    transform: scale(1.25);
-    transition: 0.2s;
-   }
-
+    <div class="popup popup-visible">
+        <div class="popup__wrapper">
+            <script>
+                let remove = function () {
+                    document.querySelector(".popup").classList.remove("popup-visible");
+                }
+            </script>
+            <svg onclick="remove()" id="popup__cross" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 441 441"><path fill="#fff" stroke="#000" d="M220.336 170.564l.353.353.354-.353L390.288 1.318l49.796 49.773-169.269 169.245-.353.354.353.354 169.269 169.245-49.796 49.796-169.245-169.269-.354-.353-.353.353-169.27 169.269-49.748-49.796 169.245-169.245.353-.354-.353-.354L1.318 51.067 51.09 1.318l169.246 169.246z"/></svg>
+            <div class="popup__content">
+                <h2 class="title-dashed popup__title">ваш фидбек</h2>
+                <p>Как часто вы заходите на наш сайт?</p>
+                <select name="how-often" id="how-often">
+                    <option selected>Почти каждый день</option>
+                    <option>Раз в несколько дней</option>
+                    <option>Раз в несколько недель</option>
+                    <option>Несколько раз в год</option>
+                </select>
+                <p>Вы подписаны на нашу e-mail-рассылку?</p>
+                <form class="is-subscribed__form">
+                    <label class="form-row">
+                        <input type="radio" name="is-subscribed" value="yes">
+                        <span class="radio-group-text">Да</span>
+                    </label>
+                    <label class="form-row">
+                        <input type="radio" name="is-subscribed" value="no">
+                        <span class="radio-group-text">Нет</span>
+                    </label>
+                </form>
+                
+                <p>Расскажите, какой контент вы хотели бы видеть на нашем сайте?</p>
+                <textarea class="popup__feedback" placeholder="Может, больше рецептов?" rows="5"></textarea>
+                <button onclick="remove()" type="submit" class="popup__button">Отправить</button>
+            </div>
+        </div>
+    </div>
+  <header class = "header">
+      <div class = "header__inner">
+          <div class ="logo">
+              <a href="#0">
+                  <img src = https://netology-code.github.io/html-2-diploma/sources/images/noemi-logo.svg alt = "Noemi Logo">
+               </a>
+          </div>
+          <nav class = "nav">
+              <div class="burger-menu">
+                  <div class="burger-menu__item"></div>
+                  <div class="burger-menu__item"></div>
+                  <div class="burger-menu__item"></div>
+              </div>
+              <ul class = "nav-menus">
+                  <li class = "menu-item">Главная</li>
+                  <li class = "menu-item">Посты</li>
+                  <li class = "menu-item">Статьи</li>
+                  <li class = "menu-item">Теги</li>
+                  <li class = "menu-item">Темы</li>
+                  <li class = "menu-item">Контакты</li>
+              </ul>
+          </nav>
+      </div> 
+      <div class="header-intro">
+        <div class ="logo-mobile">
+            <a href="#0">
+                <img src = https://netology-code.github.io/html-2-diploma/sources/images/noemi-logo.svg alt = "Noemi Logo">
+             </a>
+        </div> 
+        <h1 class="header-text">Блог о творчестве, спорте и образе жизни</h1> 
+      </div>
+      
+  </header>
+  <article class="trends">
+    <h2 class="trends__title title-dashed">сейчас в тренде</h2>
+    <div class="trends__wrapper">
+    <section class="trends__item">
+        <div class="trends__content">
+            <div class="trends__tags">
+                <a class="trends__tag" href="#">lifestyle</a>
+                <a class="trends__tag" href="#">interior</a>
+            </div>
+            <a href="#"><h2 class="trends__text">
+                сейчас в тренде: сад на подоконнике
+            </h2></a>
+        </div>
+    </section>
+    <section class="trends__item">
+        <div class="trends__content">
+            <div class="trends__tags">
+                <a class="trends__tag" href="#">food</a>
+            </div>
+            <a href="#"><h2 class="trends__text">сыры на красивых картинках из интернета: какие они на вкус?</h2></a>
+        </div>
+    </section>
+    <section class="trends__item">
+        <div class="trends__content">
+            <div class="trends__tags">
+                    <a class="trends__tag" href="#">lifestyle</a>
+                    <a class="trends__tag" href="#">travel</a>
+            </div>
+            <a href="#"><h2 class="trends__text">собираемся в первый поход в горы</h2></a>
+        </div>
+    </section>
+    <section class="trends__item">
+        <div class="trends__content">
+            <div class="trends__tags"> 
+                <a class="trends__tag" href="#">food</a>
+                <a class="trends__tag" href="#">health</a>
+            </div>
+            <a href="#"><h2 class="trends__text">сейчас в тренде: сколько витаминa c в лимоне?</h2></a>
+        </div>
+        </section>  
+    </div>
+</article>
+  <div class="content">
    
-.socials {
-    height: 80px;
-    width: 100%;
-    max-width: 1170px;
-    background-color: #f4f7f6;
-    padding: 25px 0;
-    margin: 0 auto;
-    box-sizing: border-box;
-    
-    
-}
+    <main class="news">
 
+        <section class="card">
+            <img class="card-img" src="https://netology-code.github.io/html-2-diploma/sources/images/last-post1.jpg" alt="Заставка">
+            <div class="card-text">
+            <ul class="categories">
+                <li><a class="category" href="#">travel</a></li>
+                 <li><a class="category" href="#">health</a></li>
+            </ul>
+            
+            <h2 class="card-name"><a class="hovered-orange" href="#">10 мест, ради которых стоит проснуться на рассвете</a></h2>
+            <span class="date">10 июня 2019</span>
+            <span class="author">Неизвестный автор</span>
+            <p class="card-content">Итак, вы в Питере. Раннее утро. Лед с рек и каналов уже ушел, запущены фонтаны города... Музеи ещё закрыты. Что посмотреть?</p>
+        </div> 
+        </section>
 
-/*-------I-C-O-N-S-------*/
+        <section class="card">
+            <img class="card-img" src="https://netology-code.github.io/html-2-diploma/sources/images/last-post2.jpg" alt="Заставка">
+            <div class="card-text">
 
-.twitter-logo {
-    background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/social/004-twitter.svg");
-    background-size: cover;
-}
-.pinterest-logo {
-    background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/social/001-pinterest.svg");
-    background-size: cover;
-}
-.facebook-logo {
-    background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/social/002-facebook-logo.svg");
-    background-size: cover;
-}
-.instagram-logo {
-    background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/social/005-instagram.svg");
-    background-size: cover;
-}
-.tumblr-logo {
-    background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/social/003-tumblr.svg");
-    background-size: cover;
-}
+            <ul class="categories">
+                <li><a class="category" href="#">health</a></li>
+                <li><a class="category" href="#">lifestyle</a></li>
+            </ul>
+            
+            <h2 class="card-name"><a class="hovered-orange" href="#">Йoга для начинающих в
+                домашних условиях</a></h2>
+            <span class="date">10 июня 2019</span>
+            <span class="author">Неизвестный автор</span>
+            <p class="card-content">Расскажем, какие упражнения выбрать и как сделать коврик для занятий йогой из того, что можно найти в шкафу.</p>
+        </div> 
+        </section>
 
+        <section class="card">
+            <img class="card-img" src="https://netology-code.github.io/html-2-diploma/sources/images/last-post3.jpg" alt="Заставка">
+            <div class="card-text">
+            <ul class="categories">
+                <li><a class="category" href="#">music</a></li>
+            </ul>
+            
+            <h2 class="card-name"><a class="hovered-orange" href="#">Лучшие музыкальные
+                фестивали этого лета</a></h2>
+            <span class="date">10 июня 2019</span>
+            <span class="author">Неизвестный автор</span>
+            <p class="card-content">Лето на носу, а с ним и музыкальные фестивали. На каком же из них вы разобьёте свою палатку?</p>
+            <p class="card-content">Мы составили список лучших летних фестивалей по всему миру.</p>
+        </div> 
+        </section>
 
+        <section class="card">
+            <img class="card-img" src="https://netology-code.github.io/html-2-diploma/sources/images/last-post4.jpg" alt="Заставка">
+            <div class="card-text">
+            <ul class="categories">
+                <li><a class="category" href="#">lifestyle</a></li>
+                <li><a class="category" href="#">food</a></li>
+            </ul>
+            
+            <h2 class="card-name"><a class="hovered-orange" href="#">Наукоёмкий подход к
+                кулинарии</a></h2>
+            <span class="date">10 июня 2019</span>
+            <span class="author">Неизвестный автор</span>
+            <p class="card-content">Узнаем основы проектирования новых пищевых и около-пищевых опытов, вскроем физику, химию и микробиологию еды.</p>
+        </div> 
+        </section>
 
+        <section class="card">
+            <img class="card-img" src="https://netology-code.github.io/html-2-diploma/sources/images/last-post5.jpg" alt="Заставка">
+            <div class="card-text">
+            <ul class="categories">
+                <li><a class="category" href="#">lifestyle</a></li>
+                <li><a class="category" href="#">interior</a></li>
+                <li><a class="category" href="#">art</a></li>
+            </ul>
+            
+            <h2 class="card-name"><a class="hovered-orange" href="#">делаем модные принты на
+                подушках для интерьера</a> </h2>
+            <span class="date">10 июня 2019</span>
+            <span class="author">Неизвестный автор</span>
+            <p class="card-content">Подушки для дивана целесообразнее заказать в съемных чехлах на молнии, если потребуется чистка подушек, проще снять чехлы, чем везти подушку в химчистку.</p>
+        </div> 
+        </section>
 
+        
+    </main>
+    <aside class="right-block">
+       <section class="new-posts">
+           <div class="title-dashed">
+           <h2 class="new-posts-title">Новые посты</h2>
+            </div>
+           <article class="post">
+               <img src="https://netology-code.github.io/html-2-diploma/sources/images/2.jpg" alt="Иконка">
+               <div class="post-text">
+               <span class="date" >14 июня 2019</span>
+               <h3 class="post-title"><a class="hovered-orange" href="#">10 мест, ради которых стоит проснуться</a></h3>
+            </div>
+           </article>
 
+           <article class="post">
+            <img src="https://netology-code.github.io/html-2-diploma/sources/images/7.jpg" alt="Иконка">
+            <div class="post-text">
+            <span class="date" >14 июня 2019</span>
+            <h3 class="post-title"><a class="hovered-orange" href="#">Йога для домашних</a></h3>
+         </div>
+        </article>
 
-.copyright-text {
-    font-weight: bold;
-    font-size: 12px;
-    color: #999999;
-    text-align: center;
-}
-.copyright {
-    width: 219px; /* по длине span.copyrigh-text */
-    margin: 0 auto;
-    box-sizing: border-box;
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-@media (min-width: 899px) and (max-width: 1120px) {
-    .trends__item {
-        width: calc(50% - 1px);
-        height: 25vw;
-    }
-}
+        <article class="post">
+            <img src="https://netology-code.github.io/html-2-diploma/sources/images/45.jpg" alt="Иконка">
+            <div class="post-text">
+            <span class="date" >14 июня 2019</span>
+            <h3 class="post-title"><a class="hovered-orange" href="#">как мы превратили
+                классное место в
+                балкон</a>
+                   </h3>
+         </div>
+        </article>
 
-/*PHONE AND TABLET*/
+        <article class="post">
+            <img src="https://netology-code.github.io/html-2-diploma/sources/images/151.jpg" alt="Иконка">
+            <div class="post-text">
+            <span class="date" >14 июня 2019</span>
+            <h3 class="post-title hovered-orange"><a class="hovered-orange" href="#">Кулинарный подход
+                к науке</a>
+                   </h3>
+         </div>
+        </article>
 
-@media (min-width: 300px) and (max-width: 900px) { 
-    #popup__cross {
-        height: 30px;
-    }
-    .burger-menu {
-        display: flex;  
-    }
-    .nav-menus {
-        display: none;
-    }
-    .card {
-        flex-direction: column;
-        border-bottom: 3px solid #eeeeee;
-        padding-bottom: 35px;
-        width: 100%;
-    }
-    .card-img {
-        width: 100%;
-        height: auto;
-        margin-bottom: 15px;
-    }
-    .trends {
-        margin-top: 50px;
-    }
-    .trends__item {
-        height: 30vw;
-    }
-    .trends__title {
-        font-size: 18px;
-    }
-    .right-block {
-        margin-right: auto;
-    }
-    .our-products-title {
-        font-size: 18px;
-    }
-}
+        <article class="post">
+            <img src="https://netology-code.github.io/html-2-diploma/sources/images/501.jpg" alt="Иконка">
+            <div class="post-text">
+            <span class="date" >14 июня 2019</span>
+            <h3 class="post-title hovered-orange">лучшие прически для
+                распущенных волос<a href="#"></a>
+                   </h3>
+         </div>
+        </article>
 
-/*TABLET ONLY*/
+       </section>
+       <div class="input-field">
+           <form class="search-form">
+            <input required type="search" class="input" placeholder="Найти...">
+            <span class="visually-hidden">Поиск по сайту...</span>
+            <button type="submit" class="search-button"></button>
+            
+        </form>
+       </div>
+        <section class="emailing">
+            <div class="title-dashed">
+                <h2 class="emailing-title">Рассылка</h2>
+            </div>
+            <form class="email-form">
+            <input type="email" class="email" required placeholder="Ваш email-адрес">
+            <span class="visually-hidden">Подпишитесь на наши новости!</span>
+            <button title="Send email" class="email-button ">Подписаться</button>
+            
+            </form>
+        </section>
+        <section class="tags">
+            <div class="title-dashed">
+                <h3 class="tags-title">Теги</h3>
+            </div>
+                <ul class="tag-items">
+                    <li><a href="#" class="tag-item">Fashion</a></li>
+                    <li><a href="#" class="tag-item">Music</a></li>
+                    <li><a href="#" class="tag-item">Lifestyle</a></li>
+                    <li><a href="#" class="tag-item">Art</a></li>
+                    <li><a href="#" class="tag-item">Interior</a></li>
+                    <li><a href="#" class="tag-item">Travel</a></li>
+                    <li><a href="#" class="tag-item">Food</a></li>
+                    <li><a href="#" class="tag-item">Health</a></li>
+                </ul>  
+           
+        </section>
+        <section class="topics">
+            <div class="title-dashed">
+                <h3 class="topics-title">Темы</h3>
+            </div>           
+            <ul class="topics-block">
+                <li><a href="#" class="topic">Красота<span>12</span></a></li>
+                <li><a href="#" class="topic">Здоровье<span>4</span></a></li>
+                <li><a href="#" class="topic">Образ жизни<span>145</span></a></li>
+                <li><a href="#" class="topic">Музыка<span>28</span></a></li>
+                <li><a href="#" class="topic">Спорт<span>62</span></a></li>
+                <li><a href="#" class="topic">Йога<span>8</span></a></li>
+            </ul>
+        </section>
+    </aside>
+</div>
 
-@media (min-width: 768px) and (max-width: 900px) {
-    h2.popup__title {
-        font-size: 18px;
-    }
-    .header {
-        padding-right: 40px;
-        padding-left: 40px; 
-    }
-    .header-text {
-        font-size: 40px;
-    }
-    .our-products__product {
-        width: calc(50% - 15px);
-    }
-    .trends__item {
-        width: calc(50% - 1px);
-    }
-}
+<section class="our-products">
+    <h2 class="our-products-title title-dashed">наши изделия</h2>
+<div class="our-products__wrapper">
+    <div class="our-products__product">
+        <div class="our-products__img"></div>
+        <div class="our-products__content">
+            <h3 class="our-products__title">подушки на диван</h3>
+            <p class="our-products__description">Набор из двух подушек с модными принтами. Видео о создании <a>здесь</a>.</p>
+            <div class="our-products__buy">
+                <div class="our-products__price">
+                    <span class="our-products__price-dashed">1000 ₽</span>
+                    <span class="our-products__price">800 ₽</span>
+                </div>
+                <button class="our-products__button" title="buy">в магазин</button>
+            </div>
+        </div>
+    </div>
 
-/*PHONE ONLY*/
+    <div class="our-products__product">
+        <div class="our-products__img"></div>
+        <div class="our-products__content">
+            <h3 class="our-products__title">Кукла «Зайчик»</h3>
+            <p class="our-products__description">Интерьерная рукодельная кукла «Зайчик», созданию которой посвящена весенняя серия постов в блоге и несколько подкастов.</p>
+            <div class="our-products__buy">
+                <div class="our-products__price">
+                    <span class="our-products__price">3500 ₽</span>
+                </div>
+                <button class="our-products__button" title="buy">в магазин</button>
+            </div>
+        </div>
+    </div>
 
-@media (min-width: 300px) and (max-width: 767px) {
-    .popup__content {
-        padding: 30px 25px;
-    }
-    h2.popup__title {
-        font-size: 16px;
-    }
-    .header__inner {
-        width: 100%;
-        justify-content: flex-end;
-    }
-    .header-text {
-        font-size: 26px;
-        line-height: 1.5em;
-        margin-top: 25px;
-    }
-    .header {
-        height: 100vh;
-        background-image: url('../img/header-mobile.png');
-        background-size: cover;
-    }   
-    .header-intro {
-        margin-top: 20vmax;
-    }
-    .header::after {
-        display: none;
-    }
-    .logo {
-        display: none;
-    }
-    .logo-mobile {
-        display: block;
-    }
-    .content {
-        flex-direction: column;
-        padding: 0 15px;
-    }
-    .trends__item {
-        width: 100%;
-        height: 63vw;
-    }
-    .news {
-        width: 100%;
-    }
-    .card-name {
-        margin-bottom: 15px;
-    }
-    .our-products {
-        width: 90%;
-        margin: 0 auto;
-        padding: 0;
-    }
-    .our-products__product {
-        width: 100%;
-        margin-bottom: 25px;
-    }
-    .trends__text {
-        font-size: 16px;
-    }
-    .card:first-child, .our-products {
-        margin-top: 45px;
-    }
-    .card:last-child {
-        margin-bottom: 45px;
-    }
-    .card-name {
-        font-size: 16px;
-    }
-    .card-content {
-        font-size: 14px;
-    }
-    .right-block {
-        width: 100%;
-        margin-left: 0;
-    }
-    footer {
-        padding: 0;
-        width: calc(90% + 6px);
-        margin: 0 auto;
-    }
-}
+    <div class="our-products__product">
+        <div class="our-products__img"></div>
+        <div class="our-products__content">
+            <h3 class="our-products__title">шестиугольная рамка</h3>
+            <p class="our-products__description">Необычная рамка для украшения дома из видео «Как сделать рамку из подручных средств за  минут»</p>
+            <div class="our-products__buy">
+                <div class="our-products__price">
+                    <span class="our-products__price-dashed">500 ₽</span>
+                    <span class="our-products__price">400 ₽</span>
+                </div>
+                <button class="our-products__button">в магазин</button>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+  <footer>
+    <address class="socials">
+
+        <ul class="icons">
+
+           
+                <li class="icon"> <a class="socials-icon twitter-logo" href="#"></a><span class="visually-hidden">Twitter</span></li>
+            
+           
+                <li class="icon"> <a class="socials-icon pinterest-logo" href="#"></a><span class="visually-hidden">Pinterest</span></li>
+            
+            
+                <li class="icon"> <a class="socials-icon facebook-logo" href="#"></a><span class="visually-hidden">Facebook</span></li>
+            
+            
+                <li class="icon"> <a class="socials-icon instagram-logo" href="#"></a><span class="visually-hidden">Instagram</span></li>
+            
+            
+                <li class="icon"> <a class="socials-icon tumblr-logo" href="#"></a><span class="visually-hidden">Tumblr</span></li>
+            
+           
+           
+        </ul>
+    </address>
+    <div class="copyright">
+        <span class="copyright-text"><a class="copyright-text" href="#">Copyright © 2009–2019 City Blog LLC.</a>
+        </span>
+    </div>
+  </footer>
+  </body>
+  </html>
