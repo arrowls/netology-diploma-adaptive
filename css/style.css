@@ -87,7 +87,8 @@ a {
     box-sizing: border-box;
     align-self: center;
     padding: 50px 30px; 
-    width: 390px;
+    width: 95%;
+    max-width: 390px;
     
     
     z-index: 100;
