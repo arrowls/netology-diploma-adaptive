@@ -59,8 +59,124 @@ a {
     clip-path: inset(100%);
     clip: rect(0 0 0 0);
     overflow: hidden;
-  }
-  
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 90;
+}
+.popup__wrapper {
+    position: relative;
+    margin: auto;
+    display: flex;
+    flex-direction: column; 
+    
+}
+#popup__cross {
+    height: 20px;
+    align-self: flex-end;
+    margin-bottom: 5px;
+}
+#popup__cross:hover > path {
+    fill: #b59f5b;
+}
+.popup__content {
+    box-sizing: border-box;
+    align-self: center;
+    padding: 50px 30px; 
+    width: 390px;
+    
+    
+    z-index: 100;
+    background-color: #fff;
+}
+h2.popup__title {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+.popup p {
+    font-size: 13px;
+}
+#how-often {
+    width: 100%;
+    padding: 18px;
+    border: none;
+    border: 2px solid transparent;
+    background-color: #f4f7f6;
+    background-image: url(../svg/form-arrows.svg);
+    background-position: 95% 50%;
+    background-repeat: no-repeat;
+    background-size: auto 15px;
+    color: #818382;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+.is-subscribed__form {
+    font-size: 13px;
+    margin-bottom: 30px;
+    margin-top: 5px;
+}
+.form-row input {
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+.form-row {
+    margin-right: 12px;
+    
+}
+.radio-group-text::before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-image: url(../svg/form-empty-circle.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 18px;
+    vertical-align: middle;
+    margin-right: 3px;
+}
+.form-row input:checked ~ .radio-group-text::before {
+    background-image: url(../svg/form-circle.svg);
+}
+.popup__feedback {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid transparent;
+    background-color: #f4f7f6;
+    color: #323232;
+    resize: none;
+    margin-top: 5px;
+}
+.popup__feedback:focus {
+    outline: 1px solid #b59f5b;
+}
+.popup__button {
+   margin-top: 25px;
+}
+.popup::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    opacity: 0.6;
+    z-index: -1;
+    height: 100%;
+}
+.popup-visible {
+    display: flex;
+}
 
 
 /*  ------- H-E-A-D-E-R--------*/   
@@ -329,7 +445,7 @@ main {
     font-weight: bold;
 }
 .new-posts-title, .emailing-title, .tags-title, .topics-title, 
-.trends__title, .our-products-title {
+.trends__title, .our-products-title, .popup__title {
     text-transform: uppercase;
     font-size: 14px;
     text-align: center;
@@ -384,11 +500,11 @@ main {
     color: #888888;
     background-color: #f4f7f6; 
 }
-.email:focus, .input:focus {
+.email:focus, .input:focus, #how-often:focus {
     border: 2px solid #b59f5b;
     outline: none;
 }
-.email-button, .our-products__button {
+.email-button, .our-products__button, .popup__button {
     background-color: #b59f5b;
     width: 100%;
     color: white;
@@ -400,7 +516,7 @@ main {
     border: none;
     flex-shrink: 0;
 }
-.email-button:hover, .search-button:hover, .our-products__button:hover {
+.email-button:hover, .search-button:hover, .our-products__button:hover, .popup__button:hover {
     background-color: #323232;
     color: white;
     transition: 0.2s;
@@ -635,6 +751,9 @@ ul.icons {
 /*PHONE AND TABLET*/
 
 @media (min-width: 300px) and (max-width: 900px) { 
+    #popup__cross {
+        height: 30px;
+    }
     .burger-menu {
         display: flex;  
     }
@@ -672,6 +791,9 @@ ul.icons {
 /*TABLET ONLY*/
 
 @media (min-width: 768px) and (max-width: 900px) {
+    h2.popup__title {
+        font-size: 18px;
+    }
     .header {
         padding-right: 40px;
         padding-left: 40px; 
@@ -690,6 +812,12 @@ ul.icons {
 /*PHONE ONLY*/
 
 @media (min-width: 300px) and (max-width: 767px) {
+    .popup__content {
+        padding: 30px 25px;
+    }
+    h2.popup__title {
+        font-size: 16px;
+    }
     .header__inner {
         width: 100%;
         justify-content: flex-end;
